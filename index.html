@@ -151,7 +151,6 @@
             }
         }
 
-        /* Новые стили для блока До/После */
         .before-after-comparison {
             display: flex;
             flex-wrap: wrap;
@@ -202,6 +201,27 @@
             .before-after-comparison {
                 flex-direction: column;
             }
+        }
+
+        /* Стили для списка результатов в кейсе */
+        .results-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 10px 0 20px;
+        }
+        .results-list li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.4;
+        }
+        .results-list li:before {
+            content: "•";
+            color: #f39c12;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
     </style>
 </head>
@@ -283,10 +303,10 @@
     </div>
 </section>
 
-<!-- Новый блок ДО/ПОСЛЕ -->
 <section class="section" style="background: #111;">
     <div class="container">
-                <div class="before-after-comparison">
+        <h2>Фото ДО и ПОСЛЕ внедрения RUTT</h2>
+        <div class="before-after-comparison">
             <div class="comparison-item before">
                 <img loading="lazy" src="images/before.jpg" alt="До внедрения">
                 <div class="comparison-text">
@@ -319,7 +339,7 @@
 
 <section class="section">
     <div class="container">
-        <h2>Технические характеристики:</h2>
+        <h2>Технические характеристики</h2>
         <div class="specs">
             <div class="spec-item"><strong>Грузоподъемность:</strong> 14 000 кг</div>
             <div class="spec-item"><strong>Вылет стрелы:</strong> 7.5 м</div>
@@ -333,7 +353,7 @@
 
 <section class="section">
     <div class="container">
-        <h2>Кому подходит RUTT:</h2>
+        <h2>Кому подходит RUTT</h2>
         <div class="tags-list">
             <span>Малые и средние заготовители</span>
             <span>Арендаторы лесных участков</span>
@@ -371,12 +391,14 @@
                 <strong>Объем инвестиций:</strong> 25,3 млн руб. (переход с трелевки на схему 3 МТЗ + 3 полуприцепа РУТТ)<br>
                 <strong>Экономия с м³:</strong> 454 руб.<br>
                 <strong>Окупаемость:</strong> 0,5 года или 18 000 м³</p>
-                <p><strong>Результат:</strong><br>
-                - увеличение производительности в 2.5 раза,<br>
-                - снижение затрат на 30%,<br>
-                - увеличение прибыли на 40%,<br>
-                - рост зарплат на 100%,<br>
-                - снижение себестоимости готовой продукции на нижнем складе до 800 руб./м³</p>
+                <p><strong>Результат:</strong></p>
+                <ul class="results-list">
+                    <li>увеличение производительности в 2.5 раза</li>
+                    <li>снижение затрат на 30%</li>
+                    <li>увеличение прибыли на 40%</li>
+                    <li>рост зарплат на 100%</li>
+                    <li>снижение себестоимости готовой продукции на нижнем складе до 800 руб./м³</li>
+                </ul>
                 <p>Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p>
                 <a href="files/case.pdf" class="btn" style="margin-top: 20px; display: inline-block;" target="_blank"><i class="fas fa-file-pdf"></i> Открыть подробный кейс (PDF)</a>
             </div>
@@ -407,7 +429,7 @@
 
 <section class="section">
     <div class="container">
-        <h2>Преимущества RUTT:</h2>
+        <h2>Преимущества RUTT</h2>
         <div class="two-col-grid">
             <div>
                 <ul class="info-list">
@@ -430,7 +452,7 @@
 
 <section class="section" style="background: #111;">
     <div class="container">
-        <h2>Области применения полуприцепа RUTT</h2>
+        <h2>Области применения полуприцепа РУТТ</h2>
         <div class="area-grid">
             <div class="area-card">
                 <img loading="lazy" src="images/area-fire.jpg" alt="Пожарная техника">
@@ -474,7 +496,9 @@
                     <li>Подрезка деревьев</li>
                 </ul>
             </div>
-  
+        </div>
+        <p style="text-align:center; margin-top:20px; font-size:0.9rem;">*Для работы изображений необходимы файлы <strong>area-fire.jpg</strong> и <strong>area-hay.jpg</strong> в папке <strong>images/</strong></p>
+    </div>
 </section>
 
 <section class="section">
@@ -501,7 +525,8 @@
 
 <section class="section">
     <div class="container">
-              <div class="video-container">
+        <h2>Дополнительное видео</h2>
+        <div class="video-container">
             <iframe src="https://rutube.ru/play/embed/aca8e30ac9621534becb7edbd25c9c35/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
         <p style="text-align:center; margin-top: 12px;">Ещё один взгляд на работу RUTT</p>
