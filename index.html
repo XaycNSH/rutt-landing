@@ -65,10 +65,6 @@
         .calc-field label { display: block; margin-bottom: 8px; font-weight: 600; }
         .calc-result { background: #1f1f1f; padding: 20px; border-radius: 16px; text-align: center; font-size: 1.4rem; }
         .calc-result span { font-size: 2rem; font-weight: 800; color: #f39c12; }
-        .before-after { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
-        .ba-item { flex: 1; text-align: center; }
-        .ba-item img { width: 100%; border-radius: 16px; border: 1px solid #333; }
-        .ba-caption { margin-top: 12px; font-weight: 700; font-size: 1.2rem; }
         .whatsapp-btn { background: #25D366; color: white; }
         .whatsapp-btn:hover { background: #128C7E; }
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; margin-top: 30px; }
@@ -154,6 +150,59 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* Новые стили для блока До/После */
+        .before-after-comparison {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        .comparison-item {
+            flex: 1;
+            background: #111;
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #333;
+        }
+        .comparison-item img {
+            width: 100%;
+            display: block;
+        }
+        .comparison-text {
+            padding: 20px;
+        }
+        .comparison-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .comparison-text li {
+            margin-bottom: 10px;
+            padding-left: 24px;
+            position: relative;
+            line-height: 1.3;
+            font-size: 0.95rem;
+        }
+        .comparison-text li:before {
+            position: absolute;
+            left: 0;
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+        }
+        .comparison-item.before li:before {
+            content: "\f00d";
+            color: #e74c3c;
+        }
+        .comparison-item.after li:before {
+            content: "\f00c";
+            color: #2ecc71;
+        }
+        @media (max-width: 768px) {
+            .before-after-comparison {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -234,12 +283,36 @@
     </div>
 </section>
 
+<!-- Новый блок ДО/ПОСЛЕ -->
 <section class="section" style="background: #111;">
     <div class="container">
-        <h2>Внедрения RUTT</h2>
-        <div class="before-after">
-            <div class="ba-item"><img loading="lazy" src="images/before.jpg" alt="До"><div class="ba-caption">До</div></div>
-            <div class="ba-item"><img loading="lazy" src="images/after.jpg" alt="После"><div class="ba-caption">После</div></div>
+                <div class="before-after-comparison">
+            <div class="comparison-item before">
+                <img loading="lazy" src="images/before.jpg" alt="До внедрения">
+                <div class="comparison-text">
+                    <ul>
+                        <li>Пьянки, гулянки, «текучка»</li>
+                        <li>Низкая производительность — до 30 м³/смена</li>
+                        <li>3–4 человека в звене/бригаде</li>
+                        <li>Частые простои, поломки, перерасход ГСМ</li>
+                        <li>Зависимость от лесовоза-манипулятора</li>
+                        <li>Ручной сбор и утилизация порубочных остатков</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="comparison-item after">
+                <img loading="lazy" src="images/after.jpg" alt="После внедрения">
+                <div class="comparison-text">
+                    <ul>
+                        <li>Мотивация работать за хорошую з/п</li>
+                        <li>Высокая производительность — 90 м³/смена</li>
+                        <li>2 квалифицированных специалиста в звене</li>
+                        <li>Налаженный процесс снабжения и ремонта</li>
+                        <li>Вывоз сразу на нижний склад</li>
+                        <li>Механизированный сбор и утилизация</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -401,6 +474,9 @@
                     <li>Подрезка деревьев</li>
                 </ul>
             </div>
+        </div>
+        <p style="text-align:center; margin-top:20px; font-size:0.9rem;">*Для работы изображений необходимы файлы <strong>area-fire.jpg</strong> и <strong>area-hay.jpg</strong> в папке <strong>images/</strong></p>
+    </div>
 </section>
 
 <section class="section">
@@ -427,8 +503,7 @@
 
 <section class="section">
     <div class="container">
-        <h2>Дополнительное видео</h2>
-        <div class="video-container">
+              <div class="video-container">
             <iframe src="https://rutube.ru/play/embed/aca8e30ac9621534becb7edbd25c9c35/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
         <p style="text-align:center; margin-top: 12px;">Ещё один взгляд на работу RUTT</p>
