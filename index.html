@@ -77,13 +77,48 @@
         .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; margin-top: 30px; }
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         .swiper { width: 100%; border-radius: 20px; margin-top: 30px; }
-        .swiper-slide img { width: 100%; border-radius: 20px; border: 1px solid #333; display: block; }
+        .swiper-slide img { width: 100%; border-radius: 20px; border: 1px solid #333; display: block; cursor: pointer; transition: transform 0.2s; }
+        .swiper-slide img:hover { transform: scale(1.02); }
         .swiper-button-next, .swiper-button-prev { color: #f39c12; }
         .swiper-pagination-bullet { background: #fff; opacity: 0.5; }
         .swiper-pagination-bullet-active { background: #f39c12; }
         .footer-privacy { margin-top: 15px; font-size: 0.8rem; }
         .footer-privacy a { color: #f39c12; text-decoration: none; }
         .footer-privacy a:hover { text-decoration: underline; }
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 40px;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+            transition: 0.2s;
+        }
+        .lightbox-close:hover {
+            color: #f39c12;
+        }
     </style>
 </head>
 <body>
@@ -193,7 +228,7 @@
     </div>
 </section>
 
-<!-- Фотокарусель (Swiper) с 10 фото -->
+<!-- Фотокарусель (Swiper) с 10 фото + lightbox -->
 <section class="section" style="background: #111;">
     <div class="container">
         <h2>📸 Фотогалерея RUTT в работе</h2>
@@ -214,7 +249,7 @@
             <div class="swiper-button-next"></div>
             <div class="swiper-pagination"></div>
         </div>
-        <p style="text-align:center; margin-top: 20px; font-size:0.9rem;">Листайте фото — реальные кадры с лесосек</p>
+        <p style="text-align:center; margin-top: 20px; font-size:0.9rem;">Нажмите на фото для увеличения — листайте стрелками или свайпом</p>
     </div>
 </section>
 
@@ -272,18 +307,90 @@
     </div>
 </footer>
 
+<!-- Lightbox HTML -->
+<div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Увеличенное фото">
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    const swiper = new Swiper('.swiper', { loop: true, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, pagination: { el: '.swiper-pagination', clickable: true }, spaceBetween: 20, slidesPerView: 1, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
+    // Инициализация карусели
+    const swiper = new Swiper('.swiper', {
+        loop: true,
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        spaceBetween: 20,
+        slidesPerView: 1,
+        breakpoints: {
+            768: { slidesPerView: 2 },
+            1024: { slidesPerView: 3 }
+        }
+    });
+
+    // Калькулятор окупаемости
     const priceInput = document.getElementById('priceRutt');
     const volumeInput = document.getElementById('volume');
     const savingsSpan = document.getElementById('savingsPerMonth');
     const paybackSpan = document.getElementById('paybackMonths');
-    function calculatePayback() { let price = parseFloat(priceInput.value) || 3600000; let volume = parseFloat(volumeInput.value) || 0; let savingPerCube = 600; let monthlySavings = volume * savingPerCube; if (monthlySavings <= 0) monthlySavings = 0; let months = monthlySavings > 0 ? (price / monthlySavings).toFixed(1) : '∞'; savingsSpan.innerText = Math.round(monthlySavings).toLocaleString('ru-RU'); paybackSpan.innerText = months === '∞' ? '—' : months; }
+    function calculatePayback() {
+        let price = parseFloat(priceInput.value) || 3600000;
+        let volume = parseFloat(volumeInput.value) || 0;
+        let savingPerCube = 600;
+        let monthlySavings = volume * savingPerCube;
+        if (monthlySavings <= 0) monthlySavings = 0;
+        let months = monthlySavings > 0 ? (price / monthlySavings).toFixed(1) : '∞';
+        savingsSpan.innerText = Math.round(monthlySavings).toLocaleString('ru-RU');
+        paybackSpan.innerText = months === '∞' ? '—' : months;
+    }
     priceInput.addEventListener('input', calculatePayback);
     volumeInput.addEventListener('input', calculatePayback);
     calculatePayback();
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const targetId = this.getAttribute('href').substring(1); if(targetId === '') return; const targetElement = document.getElementById(targetId); if(targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
+
+    // Плавная прокрутка к якорям
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            if(targetId === '') return;
+            const targetElement = document.getElementById(targetId);
+            if(targetElement) {
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    // Lightbox для галереи
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    function openLightbox(src) {
+        lightboxImg.src = src;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    // Делегирование событий на все изображения внутри карусели
+    const galleryContainer = document.querySelector('.swiper-wrapper');
+    if (galleryContainer) {
+        galleryContainer.addEventListener('click', function(e) {
+            let target = e.target;
+            if (target.tagName === 'IMG') {
+                openLightbox(target.src);
+            }
+        });
+    }
 </script>
 </body>
 </html>
