@@ -202,26 +202,24 @@
                 flex-direction: column;
             }
         }
-
-        /* Стили для списка результатов в кейсе */
-        .results-list {
+        /* Стили для оранжевого маркированного списка */
+        .orange-list {
             list-style: none;
             padding-left: 0;
-            margin: 10px 0 20px;
+            margin: 0;
         }
-        .results-list li {
-            margin-bottom: 8px;
-            padding-left: 20px;
+        .orange-list li {
             position: relative;
-            line-height: 1.4;
+            padding-left: 20px;
+            margin-bottom: 8px;
         }
-        .results-list li:before {
+        .orange-list li:before {
             content: "•";
             color: #f39c12;
-            font-size: 1.2rem;
             position: absolute;
             left: 0;
-            top: 0;
+            font-size: 1.2rem;
+            line-height: 1;
         }
     </style>
 </head>
@@ -376,13 +374,15 @@
     </div>
 </section>
 
+<!-- Блок Реальный кейс (обновлённый) -->
 <section class="section">
     <div class="container case">
         <h2>Реальный кейс</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
             <div style="flex:1.2">
-                <h3>ООО “Челябинский областной лесхоз”</h3>
+                <p>Мы ООО “Челябинский областной лесхоз”</p>
                 <p>Мы эффективно внедрили данную технологию на нашем предприятии и готовы помочь Вам!</p>
+                <p></p> <!-- пустой абзац для отступа -->
                 <p><strong>Локация:</strong> Челябинская область, Увельский район<br>
                 <strong>Площадь:</strong> 37 000 га<br>
                 <strong>Объем заготовки:</strong> 40 000 м³ выборочной рубки (береза)<br>
@@ -391,14 +391,16 @@
                 <strong>Объем инвестиций:</strong> 25,3 млн руб. (переход с трелевки на схему 3 МТЗ + 3 полуприцепа РУТТ)<br>
                 <strong>Экономия с м³:</strong> 454 руб.<br>
                 <strong>Окупаемость:</strong> 0,5 года или 18 000 м³</p>
+                <p></p> <!-- пустой абзац для отступа -->
                 <p><strong>Результат:</strong></p>
-                <ul class="results-list">
+                <ul class="orange-list">
                     <li>увеличение производительности в 2.5 раза</li>
                     <li>снижение затрат на 30%</li>
                     <li>увеличение прибыли на 40%</li>
                     <li>рост зарплат на 100%</li>
                     <li>снижение себестоимости готовой продукции на нижнем складе до 800 руб./м³</li>
                 </ul>
+                <p></p> <!-- пустой абзац для отступа -->
                 <p>Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p>
                 <a href="files/case.pdf" class="btn" style="margin-top: 20px; display: inline-block;" target="_blank"><i class="fas fa-file-pdf"></i> Открыть подробный кейс (PDF)</a>
             </div>
