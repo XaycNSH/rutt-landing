@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Лесовозный полуприцеп RUTT | Увеличьте прибыль лесозаготовки до 40%</title>
-    <meta name="description" content="Лесовозный полуприцеп RUTT в связке с МТЗ — новая технология заготовки. Производительность до 90 м³/смена, снижение расходов до 33%. Получите расчет под ваш участок.">
+    <meta name="description" content="Лесовозный полуприцеп RUTT в связке с МТЗ — новая технология заготовки без трелевки. Производительность до 90 м³/смена, снижение расходов до 33%. Получите расчет под ваш участок.">
     <meta name="keywords" content="лесовозный прицеп, полуприцеп для леса, техника для лесозаготовки, лесовозный полуприцеп купить, RUTT">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -27,46 +27,24 @@
         .hero-bullets { margin: 25px 0; list-style: none; }
         .hero-bullets li { margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
         .hero-bullets i { color: #f39c12; width: 24px; }
-        .stats-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin: 40px 0; }
-        .stat-item { flex: 1; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; text-align: center; backdrop-filter: blur(4px); }
-        .stat-number { font-size: 2.5rem; font-weight: 800; color: #f39c12; }
-        .problem-solution { background: #111; }
-        .two-columns { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; }
-        .col { flex: 1; background: #1a1a1a; padding: 30px; border-radius: 20px; }
-        .col h3 { font-size: 1.8rem; margin-bottom: 20px; }
-        .col ul { list-style: none; }
-        .col li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
-        .col i.fa-times { color: #e74c3c; }
-        .col i.fa-check { color: #2ecc71; }
         .economy-numbers { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 50px 0; }
         .econ-card { background: #1a1a1a; border-radius: 20px; padding: 30px; text-align: center; flex: 1; min-width: 200px; transition: transform 0.2s; }
         .econ-card:hover { transform: translateY(-8px); }
         .big-number { font-size: 3.8rem; font-weight: 800; color: #f39c12; }
         .cost { font-size: 2rem; font-weight: 800; margin: 20px 0; }
-        .steps { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
-        .step { flex: 1; background: #111; padding: 30px 20px; border-radius: 20px; text-align: center; }
-        .step-number { width: 50px; height: 50px; background: #f39c12; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 800; margin: 0 auto 20px; }
+        .steps { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; justify-content: center; }
+        .step { background: #111; padding: 30px 20px; border-radius: 20px; text-align: center; max-width: 320px; }
+        .step i { font-size: 2.5rem; color: #f39c12; margin-bottom: 15px; display: inline-block; }
         .specs {
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
             margin-top: 30px;
         }
-        @media (max-width: 1024px) {
-            .specs { grid-template-columns: repeat(3, 1fr); }
-        }
-        @media (max-width: 768px) {
-            .specs { grid-template-columns: repeat(2, 1fr); }
-        }
-        @media (max-width: 480px) {
-            .specs { grid-template-columns: 1fr; }
-        }
-        .spec-item {
-            background: #111;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #f39c12;
-        }
+        @media (max-width: 1024px) { .specs { grid-template-columns: repeat(3, 1fr); } }
+        @media (max-width: 768px) { .specs { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 480px) { .specs { grid-template-columns: 1fr; } }
+        .spec-item { background: #111; padding: 20px; border-radius: 12px; border-left: 4px solid #f39c12; }
         .price-block { background: linear-gradient(135deg, #1f1f1f, #0f0f0f); padding: 30px; border-radius: 24px; text-align: center; }
         .price-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px 0; }
         .price-item { font-size: 1.5rem; }
@@ -76,7 +54,7 @@
         input, select { width: 100%; padding: 16px; background: #222; border: 1px solid #333; color: white; border-radius: 8px; font-size: 1rem; }
         .sticky-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; gap: 12px; }
         .sticky-cta .btn { padding: 12px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } h2 { font-size: 1.8rem; } .section { padding: 50px 16px; } .sticky-cta .btn { padding: 10px 18px; font-size: 0.9rem; } .stats-grid { flex-direction: column; } .big-number { font-size: 2.5rem; } }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } h2 { font-size: 1.8rem; } .section { padding: 50px 16px; } .sticky-cta .btn { padding: 10px 18px; font-size: 0.9rem; } .big-number { font-size: 2.5rem; } }
         footer { background: #050505; padding: 30px 20px; text-align: center; border-top: 1px solid #222; }
         .contact-links { display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap; }
         .contact-links a { color: #f39c12; font-size: 1.5rem; text-decoration: none; }
@@ -117,40 +95,64 @@
             align-items: center;
             cursor: pointer;
         }
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        .lightbox img { max-width: 90%; max-height: 90%; object-fit: contain; border-radius: 8px; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .lightbox-close { position: absolute; top: 20px; right: 30px; font-size: 40px; color: #fff; cursor: pointer; z-index: 10001; transition: 0.2s; }
+        .lightbox-close:hover { color: #f39c12; }
+        .tags-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 30px; }
+        .tags-list span { background: #222; padding: 8px 16px; border-radius: 40px; font-size: 0.9rem; white-space: nowrap; }
+        .two-col-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+        .info-list { list-style: none; padding-left: 0; }
+        .info-list li { margin-bottom: 12px; display: flex; align-items: center; gap: 12px; }
+        .info-list i { color: #f39c12; width: 24px; }
+        .area-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px; }
+        .area-card { flex: 1; min-width: 250px; text-align: center; background: #111; border-radius: 20px; padding: 20px; border: 1px solid #333; }
+        .area-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 12px;
         }
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 40px;
-            color: #fff;
-            cursor: pointer;
-            z-index: 10001;
-            transition: 0.2s;
+        .area-card h3 { margin-top: 10px; font-size: 1.3rem; }
+        .addresses { display: flex; flex-wrap: wrap; justify-content: center; gap: 40px; margin-top: 30px; text-align: left; }
+        .address-item { background: #111; padding: 20px; border-radius: 20px; max-width: 300px; }
+        .address-item h4 { color: #f39c12; margin-bottom: 10px; }
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 40px;
         }
-        .lightbox-close:hover {
+        .app-category {
+            background: #111;
+            border-radius: 20px;
+            padding: 20px;
+            border-left: 4px solid #f39c12;
+        }
+        .app-category h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             color: #f39c12;
         }
-        /* Обновлённые стили для блока "Кому подходит" */
-        .tags-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 12px;
-            margin-top: 30px;
+        .app-category ul {
+            list-style: none;
+            padding-left: 0;
         }
-        .tags-list span {
-            background: #222;
-            padding: 8px 16px;
-            border-radius: 40px;
-            font-size: 0.9rem;
-            white-space: nowrap;
+        .app-category li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .app-category li:before {
+            content: "•";
+            color: #f39c12;
+            position: absolute;
+            left: 0;
+        }
+        @media (max-width: 900px) {
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -164,60 +166,71 @@
 <section class="hero">
     <div class="container hero-content">
         <h1>Увеличьте прибыль лесозаготовки до <span class="accent">+40%</span> без дорогой техники</h1>
-        <p style="font-size: 1.3rem; margin-bottom: 20px;">Лесовозный полуприцеп RUTT + трактор МТЗ — новая технология заготовки</p>
+        <p style="font-size: 1.3rem; margin-bottom: 20px;">Лесовозный полуприцеп RUTT + трактор МТЗ — новая технология заготовки без трелевки</p>
         <ul class="hero-bullets">
             <li><i class="fas fa-cube"></i> Производительность до 90 м³/смена</li>
             <li><i class="fas fa-users"></i> 2 человека вместо 4</li>
             <li><i class="fas fa-chart-line"></i> Снижение расходов до -33%</li>
         </ul>
-        <a href="#form" class="btn" style="margin-top: 10px;">👉 Получить расчет под мой участок</a>
-    </div>
-</section>
-
-<section class="section problem-solution">
-    <div class="container">
-        <h2>❌ Было — убивали прибыль</h2>
-        <div class="two-columns">
-            <div class="col"><h3>БЫЛО</h3><ul><li><i class="fas fa-times"></i> Низкая производительность (до 30 м³)</li><li><i class="fas fa-times"></i> 3–4 человека в бригаде</li><li><i class="fas fa-times"></i> Постоянные простои</li><li><i class="fas fa-times"></i> Перерасход ГСМ</li><li><i class="fas fa-times"></i> Зависимость от лесовоза</li><li><i class="fas fa-times"></i> Ручной труд</li></ul></div>
-            <div class="col"><h3>СТАЛО с RUTT</h3><ul><li><i class="fas fa-check"></i> Производительность до 90 м³/смена</li><li><i class="fas fa-check"></i> 2 человека в бригаде</li><li><i class="fas fa-check"></i> Минимум простоев</li><li><i class="fas fa-check"></i> Экономия ГСМ до 30%</li><li><i class="fas fa-check"></i> Свой лесовозный модуль</li><li><i class="fas fa-check"></i> Механизация 100%</li></ul></div>
-        </div>
-    </div>
-</section>
-
-<section class="section">
-    <div class="container">
-        <h2>🚜 RUTT — тракторный полуприцеп с манипулятором</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px;">
-            <div style="flex:1"><p style="font-size: 1.2rem; margin-bottom: 20px;">Работает в связке с МТЗ. Управление из кабины. Замена трелевки и форвардера. Вывоз сразу на нижний склад.</p><ul><li><i class="fas fa-check-circle accent"></i> Не требует дополнительной техники</li><li><i class="fas fa-check-circle accent"></i> Окупаемость за 1 сезон</li><li><i class="fas fa-check-circle accent"></i> Простота обслуживания</li></ul></div>
-            <div style="flex:1"><img loading="lazy" src="images/rutt-photo.jpg" alt="Лесовозный полуприцеп RUTT" style="width:100%; border-radius: 20px; border: 1px solid #333;"></div>
-        </div>
+        <a href="#form" class="btn" style="margin-top: 10px;">Получить расчет под мой участок</a>
     </div>
 </section>
 
 <section class="section" style="background: #0c0c0c;">
     <div class="container">
-        <h2>💰 Экономика: рост прибыли и снижение затрат</h2>
-        <div class="economy-numbers"><div class="econ-card"><div class="big-number">+40%</div><div>прибыль</div></div><div class="econ-card"><div class="big-number">-33%</div><div>расходы</div></div><div class="econ-card"><div class="big-number">x2.5</div><div>меньше персонала</div></div><div class="econ-card"><div class="big-number">+100%</div><div>зарплата водителя</div></div></div>
+        <h2>Экономика: рост прибыли и снижение затрат</h2>
+        <div class="economy-numbers">
+            <div class="econ-card"><div class="big-number">+40%</div><div>прибыль</div></div>
+            <div class="econ-card"><div class="big-number">-33%</div><div>расходы</div></div>
+            <div class="econ-card"><div class="big-number">x2.5</div><div>меньше персонала</div></div>
+            <div class="econ-card"><div class="big-number">+100%</div><div>к зарплате персонала</div></div>
+        </div>
         <div class="cost" style="text-align: center;">Себестоимость заготовки: <span class="accent">до 800 руб/м³</span></div>
         <div style="text-align: center; margin-top: 20px;"><a href="#form" class="btn">Рассчитать экономию под ваш объем</a></div>
     </div>
 </section>
 
 <section class="section">
-    <div class="container calculator">
-        <h2>🧮 Калькулятор окупаемости RUTT</h2>
-        <p style="margin-bottom: 20px;">Введите ваши параметры и узнайте, через сколько месяцев полуприцеп окупится за счёт экономии</p>
-        <div class="calc-row"><div class="calc-field"><label>Стоимость полуприцепа RUTT (₽)</label><input type="number" id="priceRutt" value="3600000" step="100000"></div><div class="calc-field"><label>Ваш текущий объём заготовки (м³/мес)</label><input type="number" id="volume" value="800" step="50"></div></div>
-        <div class="calc-result" id="calcResult">⚙️ Расчёт: экономия от снижения себестоимости <strong id="savingsPerMonth">0</strong> ₽/мес<br>Срок окупаемости: <span id="paybackMonths">0</span> месяцев</div>
-        <p style="font-size:0.85rem; margin-top:15px;">*Расчёт основан на снижении себестоимости с 1200 ₽/м³ до 800 ₽/м³, экономии на персонале и ГСМ. Данные приблизительные, точный расчёт предоставим после консультации.</p>
+    <div class="container">
+        <h2>RUTT — тракторный полуприцеп с манипулятором</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px;">
+            <div style="flex:1">
+                <p style="font-size: 1.2rem; margin-bottom: 20px;">Работает в связке с МТЗ. Управление из кабины. Замена трелевки и форвардера. Вывоз сразу на нижний склад.</p>
+                <ul class="info-list">
+                    <li><i class="fas fa-check-circle accent"></i> Не требует дополнительной техники</li>
+                    <li><i class="fas fa-check-circle accent"></i> Окупаемость за 1 сезон</li>
+                    <li><i class="fas fa-check-circle accent"></i> Простота обслуживания</li>
+                </ul>
+            </div>
+            <div style="flex:1"><img loading="lazy" src="images/rutt-photo.jpg" alt="Лесовозный полуприцеп RUTT" style="width:100%; border-radius: 20px; border: 1px solid #333;"></div>
+        </div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <h2>⚙️ Как это работает</h2>
-        <div class="steps"><div class="step"><div class="step-number">1</div><h3>Один вальщик</h3><p>Валка леса и подготовка</p></div><div class="step"><div class="step-number">2</div><h3>Один тракторист</h3><p>Управление RUTT из кабины МТЗ</p></div><div class="step"><div class="step-number">3</div><h3>Одна техника</h3><p>Погрузка, трелевка, вывоз</p></div></div>
-        <div style="text-align: center; margin-top: 20px; font-size: 1.4rem; font-weight: 700;">Производительность: <span class="accent">до 3000 м³ в месяц</span></div>
+        <h2>Как это работает</h2>
+        <div class="steps">
+            <div class="step"><i class="fas fa-link"></i><h3>Одна сцепка МТЗ+RUTT</h3><p>Единый транспортно-технологический комплекс</p></div>
+            <div class="step"><i class="fas fa-truck-loading"></i><h3>Погрузка, вывоз на нижний склад, разгрузка</h3><p>Все операции выполняет один оператор</p></div>
+            <div class="step"><i class="fas fa-chart-line"></i><h3>Производительность</h3><p>от 90 м³/смена<br>до 3000 м³ в месяц</p></div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container calculator">
+        <h2>Калькулятор окупаемости RUTT</h2>
+        <p style="margin-bottom: 20px;">Введите ваши параметры и узнайте, через сколько месяцев полуприцеп окупится за счёт экономии</p>
+        <div class="calc-row">
+            <div class="calc-field"><label>Стоимость полуприцепа RUTT (₽)</label><input type="number" id="priceRutt" value="3600000" step="100000"></div>
+            <div class="calc-field"><label>Ваш текущий объём заготовки (м³/мес)</label><input type="number" id="volume" value="800" step="50"></div>
+        </div>
+        <div class="calc-result" id="calcResult">
+            ⚙️ Расчёт: экономия <strong id="savingsPerMonth">0</strong> ₽/мес<br>
+            Срок окупаемости: <span id="paybackMonths">0</span> месяцев
+        </div>
+        <p style="font-size:0.85rem; margin-top:15px;">*Расчёт основан на экономии 400 рублей на каждом кубометре заготовленной древесины. Данные приблизительные, точный расчёт предоставим после консультации.</p>
     </div>
 </section>
 
@@ -225,21 +238,15 @@
     <div class="container">
         <h2>Внедрения RUTT</h2>
         <div class="before-after">
-            <div class="ba-item">
-                <img loading="lazy" src="images/before.jpg" alt="До: ручная погрузка, простои">
-                <div class="ba-caption">До</div>
-            </div>
-            <div class="ba-item">
-                <img loading="lazy" src="images/after.jpg" alt="После: механизированная погрузка RUTT">
-                <div class="ba-caption">После</div>
-            </div>
+            <div class="ba-item"><img loading="lazy" src="images/before.jpg" alt="До"><div class="ba-caption">До</div></div>
+            <div class="ba-item"><img loading="lazy" src="images/after.jpg" alt="После"><div class="ba-caption">После</div></div>
         </div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
-        <h2>📐 Технические характеристики:</h2>
+        <h2>Технические характеристики:</h2>
         <div class="specs">
             <div class="spec-item"><strong>Грузоподъемность:</strong> 14 000 кг</div>
             <div class="spec-item"><strong>Вылет стрелы:</strong> 7.5 м</div>
@@ -253,7 +260,7 @@
 
 <section class="section">
     <div class="container">
-        <h2>👥 Кому подходит RUTT:</h2>
+        <h2>Кому подходит RUTT:</h2>
         <div class="tags-list">
             <span>Малые и средние заготовители</span>
             <span>Арендаторы лесных участков</span>
@@ -266,7 +273,7 @@
 
 <section class="section" style="background: #0f0f0f;">
     <div class="container price-block">
-        <h2>💰 Инвестиции в рост прибыли</h2>
+        <h2>Инвестиции в рост прибыли</h2>
         <div class="price-row">
             <div class="price-item">МТЗ 1221 — <strong class="accent">4 650 000 ₽</strong></div>
             <div class="price-item">RUTT — <strong class="accent">3 600 000 ₽</strong></div>
@@ -278,18 +285,159 @@
 
 <section class="section">
     <div class="container case">
-        <h2>📌 Реальный кейс</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
-            <div style="flex:1"><h3>ООО “Челябинский областной лесхоз”</h3><p><strong>Площадь:</strong> 37 000 га<br><strong>Результат:</strong> увеличение производительности в 2.5 раза, снижение затрат на логистику на 30%.<br>Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p><a href="files/case.pdf" class="btn" style="margin-top: 20px; display: inline-block;" target="_blank"><i class="fas fa-file-pdf"></i> Открыть подробный кейс (PDF)</a></div>
-            <div style="flex:1"><img loading="lazy" src="images/case.jpg" alt="Лесозаготовка RUTT" style="width:100%; border-radius: 20px;"></div>
+        <h2>Реальный кейс</h2>
+        <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: flex-start;">
+            <div style="flex:1.2">
+                <h3>ООО “Челябинский областной лесхоз”</h3>
+                <p>Мы эффективно внедрили данную технологию на нашем предприятии и готовы помочь Вам!</p>
+                <p><strong>Локация:</strong> Челябинская область, Увельский район<br>
+                <strong>Площадь:</strong> 37 000 га<br>
+                <strong>Объем заготовки:</strong> 40 000 м³ выборочной рубки (береза)<br>
+                <strong>Среднее плечо вывозки:</strong> 5 км<br>
+                <strong>Средний диаметр:</strong> 32 см<br>
+                <strong>Объем инвестиций:</strong> 25,3 млн руб. (переход с трелевки на схему 3 МТЗ + 3 полуприцепа РУТТ)<br>
+                <strong>Экономия с м³:</strong> 454 руб.<br>
+                <strong>Окупаемость:</strong> 0,5 года или 18 000 м³</p>
+                <p><strong>Результат:</strong><br>
+                - увеличение производительности в 2.5 раза,<br>
+                - снижение затрат на 30%,<br>
+                - увеличение прибыли на 40%,<br>
+                - рост зарплат на 100%,<br>
+                - снижение себестоимости готовой продукции на нижнем складе до 800 руб./м³</p>
+                <p>Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p>
+                <a href="files/case.pdf" class="btn" style="margin-top: 20px; display: inline-block;" target="_blank"><i class="fas fa-file-pdf"></i> Открыть подробный кейс (PDF)</a>
+            </div>
+            <div style="flex:0.8"><img loading="lazy" src="images/case.jpg" alt="Лесозаготовка RUTT" style="width:100%; border-radius: 20px;"></div>
         </div>
     </div>
 </section>
 
-<!-- Фотокарусель (Swiper) с 10 фото + lightbox -->
 <section class="section" style="background: #111;">
     <div class="container">
-        <h2>📸 Фотогалерея RUTT в работе</h2>
+        <h2>Почему RUTT?</h2>
+        <div class="two-col-grid">
+            <div>
+                <ul class="info-list">
+                    <li><i class="fas fa-check-circle accent"></i> Заменяет трелевку на новый эффективный способ заготовки леса.</li>
+                    <li><i class="fas fa-check-circle accent"></i> Заменяет форвардер.</li>
+                    <li><i class="fas fa-check-circle accent"></i> Перевозит порубочные остатки.</li>
+                    <li><i class="fas fa-check-circle accent"></i> Используется в качестве хозяйственной машины для перевозки и сортировки различных грузов.</li>
+                    <li><i class="fas fa-check-circle accent"></i> Используется в сельском и коммунальном хозяйстве: перевозка рулонов сена и соломы, мусора, сучьев и пр.</li>
+                </ul>
+            </div>
+            <div>
+                <img loading="lazy" src="images/rutt-photo.jpg" alt="RUTT в работе" style="width:100%; border-radius: 20px;">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Преимущества RUTT:</h2>
+        <div class="two-col-grid">
+            <div>
+                <ul class="info-list">
+                    <li><i class="fas fa-chart-line accent"></i> Снижение себестоимости лесозаготовки.</li>
+                    <li><i class="fas fa-ruble-sign accent"></i> Снижение стоимости приобретения техники и владения ею.</li>
+                    <li><i class="fas fa-tools accent"></i> Доступность запасных частей, ремонтопригодность.</li>
+                    <li><i class="fas fa-leaf accent"></i> Снижение загрязнения лесоматериалов при транспортировке.</li>
+                </ul>
+            </div>
+            <div>
+                <ul class="info-list">
+                    <li><i class="fas fa-graduation-cap accent"></i> Снижение требований к уровню подготовки персонала.</li>
+                    <li><i class="fas fa-road accent"></i> Возможность вывозки на большие расстояния. Проходимость.</li>
+                    <li><i class="fas fa-tree accent"></i> Снижается риск повреждения корневой системы и плодородного слоя почвы.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" style="background: #111;">
+    <div class="container">
+        <h2>Области применения полуприцепа РУТТ</h2>
+        <div class="area-grid">
+            <div class="area-card">
+                <img loading="lazy" src="images/area-fire.jpg" alt="Пожарная техника">
+                <h3>Противопожарная цистерна</h3>
+                <p>Оперативное реагирование, доставка воды и оборудования</p>
+            </div>
+            <div class="area-card">
+                <img loading="lazy" src="images/area-hay.jpg" alt="Перевозка сена">
+                <h3>Сельское хозяйство</h3>
+                <p>Перевозка рулонов сена и соломы, кормов, удобрений</p>
+            </div>
+        </div>
+        <div class="app-grid">
+            <div class="app-category">
+                <h3>Лесозаготовки</h3>
+                <ul>
+                    <li>Замена трелевки на заготовку с помощью полуприцепов</li>
+                    <li>Замена автомобилей-лесовозов при вывозке от места заготовки до автомобильных дорог, складов хранения, перерабатывающих предприятий</li>
+                    <li>Перевозка порубочных остатков</li>
+                    <li>Замена форвардера</li>
+                    <li>В качестве передвижного грузоподъемного оборудования</li>
+                    <li>Измельчительные (рубильные) машины</li>
+                </ul>
+            </div>
+            <div class="app-category">
+                <h3>Сельское хозяйство</h3>
+                <ul>
+                    <li>Перевозка рулонов сена и соломы</li>
+                    <li>Перевозка сыпучих грузов (самосвальная платформа)</li>
+                    <li>Перевозка дров</li>
+                    <li>Перевозка фасованных грузов (биг-бэги и пр.)</li>
+                </ul>
+            </div>
+            <div class="app-category">
+                <h3>Коммунальное хозяйство</h3>
+                <ul>
+                    <li>В качестве хозяйственной машины для перевозки, сортировки на промышленных складах и базах</li>
+                    <li>Моечно-поливочная машина</li>
+                    <li>Противопожарная цистерна</li>
+                    <li>Уборка мусора</li>
+                    <li>Подрезка деревьев</li>
+                </ul>
+            </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Что вы получите при заказе</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; margin-top: 30px;">
+            <div><i class="fas fa-tractor accent"></i> Подбор техники под участок</div>
+            <div><i class="fas fa-chalkboard-user accent"></i> Обучение персонала</div>
+            <div><i class="fas fa-gear accent"></i> Внедрение в процесс</div>
+            <div><i class="fas fa-headset accent"></i> Сопровождение и сервис</div>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Видео работы техники</h2>
+        <div class="video-container">
+            <iframe src="https://rutube.ru/play/embed/90363830324d41d28bf3bcca2eb7d546/?p=R1Gg6wUzL_pl2bkJ9DLFkw" frameborder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        <p style="text-align:center; margin-top: 12px;">Обзор возможностей RUTT на реальной лесосеке</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <h2>Дополнительное видео</h2>
+        <div class="video-container">
+            <iframe src="https://rutube.ru/play/embed/aca8e30ac9621534becb7edbd25c9c35/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        <p style="text-align:center; margin-top: 12px;">Ещё один взгляд на работу RUTT</p>
+    </div>
+</section>
+
+<section class="section" style="background: #111;">
+    <div class="container">
+        <h2>Фотогалерея RUTT в работе</h2>
         <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide"><img loading="lazy" src="images/gallery/1.jpg" alt="Работа RUTT 1"></div>
@@ -311,40 +459,6 @@
     </div>
 </section>
 
-<section class="section" style="background: #111;">
-    <div class="container">
-        <h2>✅ Что вы получите при заказе</h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 20px; margin-top: 30px;">
-            <div><i class="fas fa-tractor accent"></i> Подбор техники под участок</div>
-            <div><i class="fas fa-chalkboard-user accent"></i> Обучение персонала</div>
-            <div><i class="fas fa-gear accent"></i> Внедрение в процесс</div>
-            <div><i class="fas fa-headset accent"></i> Сопровождение и сервис</div>
-        </div>
-    </div>
-</section>
-
-<!-- Видео 1 -->
-<section class="section">
-    <div class="container">
-        <h2>📹 Видео работы техники</h2>
-        <div class="video-container">
-            <iframe src="https://rutube.ru/play/embed/90363830324d41d28bf3bcca2eb7d546/?p=R1Gg6wUzL_pl2bkJ9DLFkw" frameborder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        </div>
-        <p style="text-align:center; margin-top: 12px;">Обзор возможностей RUTT на реальной лесосеке</p>
-    </div>
-</section>
-
-<!-- Видео 2 -->
-<section class="section">
-    <div class="container">
-        <h2>📹 Дополнительное видео</h2>
-        <div class="video-container">
-            <iframe src="https://rutube.ru/play/embed/aca8e30ac9621534becb7edbd25c9c35/" style="border: none;" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-        </div>
-        <p style="text-align:center; margin-top: 12px;">Ещё один взгляд на работу RUTT</p>
-    </div>
-</section>
-
 <section id="form" class="section">
     <div class="container form-card">
         <h2>Получите расчет и консультацию</h2>
@@ -353,7 +467,7 @@
             <div class="form-group"><input type="text" name="Имя" placeholder="Ваше имя" required></div>
             <div class="form-group"><input type="tel" name="Телефон" placeholder="Телефон" required></div>
             <div class="form-group"><input type="text" name="Объем заготовки (м³/мес)" placeholder="Примерный объем заготовки (опционально)"></div>
-            <button type="submit" class="btn" style="width:100%;">👉 Получить расчет и консультацию</button>
+            <button type="submit" class="btn" style="width:100%;">Получить расчет и консультацию</button>
         </form>
         <div style="margin-top: 30px;"><a href="https://wa.me/79227275847?text=Здравствуйте! Хочу получить коммерческое предложение на лесовозный полуприцеп RUTT" target="_blank" class="btn whatsapp-btn" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Получить КП в WhatsApp</a></div>
         <p style="margin-top: 20px; font-size: 0.8rem;">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" target="_blank" style="color:#f39c12;">политикой конфиденциальности</a></p>
@@ -369,6 +483,16 @@
             <a href="https://t.me/roma_l_88" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
             <a href="mailto:ruttrf@mail.ru"><i class="fas fa-envelope"></i> ruttrf@mail.ru</a>
         </div>
+        <div class="addresses">
+            <div class="address-item">
+                <h4>Производственно-сервисная площадка</h4>
+                <p>Курган<br>640007, ул. Серёжи Тюленина, д. 80, стр. 1, оф. 1</p>
+            </div>
+            <div class="address-item">
+                <h4>Дилерский центр</h4>
+                <p>с. Долгодеревенское, 1 мая, 1в</p>
+            </div>
+        </div>
         <div class="footer-privacy">
             <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
         </div>
@@ -376,7 +500,6 @@
     </div>
 </footer>
 
-<!-- Lightbox HTML -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="Увеличенное фото">
@@ -400,7 +523,7 @@
     function calculatePayback() {
         let price = parseFloat(priceInput.value) || 3600000;
         let volume = parseFloat(volumeInput.value) || 0;
-        let savingPerCube = 600;
+        let savingPerCube = 400;
         let monthlySavings = volume * savingPerCube;
         if (monthlySavings <= 0) monthlySavings = 0;
         let months = monthlySavings > 0 ? (price / monthlySavings).toFixed(1) : '∞';
