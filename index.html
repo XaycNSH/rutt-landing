@@ -8,373 +8,82 @@
     <meta name="keywords" content="лесовозный прицеп, полуприцеп для леса, техника для лесозаготовки, лесовозный полуприцеп купить, RUTT">
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0a0a0a;
-            color: #f0f0f0;
-            line-height: 1.4;
-            scroll-behavior: smooth;
-        }
-        h1, h2, h3 {
-            font-weight: 800;
-            letter-spacing: -0.02em;
-        }
-        h2 {
-            font-size: 2.2rem;
-            margin-bottom: 1rem;
-            border-left: 5px solid #f39c12;
-            padding-left: 20px;
-        }
-        .section {
-            padding: 70px 20px;
-            max-width: 1280px;
-            margin: 0 auto;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .accent {
-            color: #f39c12;
-        }
-        .btn {
-            display: inline-block;
-            background-color: #f39c12;
-            color: #0a0a0a;
-            font-weight: 700;
-            padding: 16px 32px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            font-family: inherit;
-        }
-        .btn:hover {
-            background-color: #e67e22;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(243,156,18,0.3);
-        }
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #f39c12;
-            color: #f39c12;
-        }
-        .btn-outline:hover {
-            background: #f39c12;
-            color: #0a0a0a;
-        }
-        .hero {
-            min-height: 100vh;
-            background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('images/hero-bg.jpg') center/cover no-repeat;
-            display: flex;
-            align-items: center;
-            position: relative;
-        }
-        .hero-content {
-            max-width: 700px;
-            padding: 20px;
-        }
-        .hero h1 {
-            font-size: 3.2rem;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-        .hero-bullets {
-            margin: 25px 0;
-            list-style: none;
-        }
-        .hero-bullets li {
-            margin-bottom: 12px;
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .hero-bullets i {
-            color: #f39c12;
-            width: 24px;
-        }
-        .stats-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: space-between;
-            margin: 40px 0;
-        }
-        .stat-item {
-            flex: 1;
-            background: rgba(255,255,255,0.05);
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-            backdrop-filter: blur(4px);
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #f39c12;
-        }
-        .problem-solution {
-            background: #111;
-        }
-        .two-columns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 40px;
-            margin-top: 40px;
-        }
-        .col {
-            flex: 1;
-            background: #1a1a1a;
-            padding: 30px;
-            border-radius: 20px;
-        }
-        .col h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        .col ul {
-            list-style: none;
-        }
-        .col li {
-            margin-bottom: 14px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-        .col i.fa-times {
-            color: #e74c3c;
-        }
-        .col i.fa-check {
-            color: #2ecc71;
-        }
-        .economy-numbers {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-            margin: 50px 0;
-        }
-        .econ-card {
-            background: #1a1a1a;
-            border-radius: 20px;
-            padding: 30px;
-            text-align: center;
-            flex: 1;
-            min-width: 200px;
-            transition: transform 0.2s;
-        }
-        .econ-card:hover {
-            transform: translateY(-8px);
-        }
-        .big-number {
-            font-size: 3.8rem;
-            font-weight: 800;
-            color: #f39c12;
-        }
-        .cost {
-            font-size: 2rem;
-            font-weight: 800;
-            margin: 20px 0;
-        }
-        .steps {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .step {
-            flex: 1;
-            background: #111;
-            padding: 30px 20px;
-            border-radius: 20px;
-            text-align: center;
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: #f39c12;
-            color: #000;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin: 0 auto 20px;
-        }
-        .specs {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px,1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        .spec-item {
-            background: #111;
-            padding: 20px;
-            border-radius: 12px;
-            border-left: 4px solid #f39c12;
-        }
-        .price-block {
-            background: linear-gradient(135deg, #1f1f1f, #0f0f0f);
-            padding: 30px;
-            border-radius: 24px;
-            text-align: center;
-        }
-        .price-row {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin: 20px 0;
-        }
-        .price-item {
-            font-size: 1.5rem;
-        }
-        .case {
-            background: #111;
-            border-radius: 24px;
-            padding: 30px;
-        }
-        .form-card {
-            background: #111;
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-        }
-        .form-group {
-            margin-bottom: 20px;
-        }
-        input, select {
-            width: 100%;
-            padding: 16px;
-            background: #222;
-            border: 1px solid #333;
-            color: white;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        .sticky-cta {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            display: flex;
-            gap: 12px;
-        }
-        .sticky-cta .btn {
-            padding: 12px 24px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            .section { padding: 50px 16px; }
-            .sticky-cta .btn { padding: 10px 18px; font-size: 0.9rem; }
-            .stats-grid { flex-direction: column; }
-            .big-number { font-size: 2.5rem; }
-        }
-        footer {
-            background: #050505;
-            padding: 30px 20px;
-            text-align: center;
-            border-top: 1px solid #222;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 20px;
-            margin-top: 30px;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-        }
-        .contact-links a {
-            color: #f39c12;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        .calculator {
-            background: #111;
-            border-radius: 24px;
-            padding: 30px;
-            margin-top: 30px;
-        }
-        .calc-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            align-items: flex-end;
-            margin-bottom: 30px;
-        }
-        .calc-field {
-            flex: 1;
-        }
-        .calc-field label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-        }
-        .calc-result {
-            background: #1f1f1f;
-            padding: 20px;
-            border-radius: 16px;
-            text-align: center;
-            font-size: 1.4rem;
-        }
-        .calc-result span {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #f39c12;
-        }
-        .before-after {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 30px;
-        }
-        .ba-item {
-            flex: 1;
-            text-align: center;
-        }
-        .ba-item img {
-            width: 100%;
-            border-radius: 16px;
-            border: 1px solid #333;
-        }
-        .ba-caption {
-            margin-top: 12px;
-            font-weight: 700;
-        }
-        .whatsapp-btn {
-            background: #25D366;
-            color: white;
-        }
-        .whatsapp-btn:hover {
-            background: #128C7E;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: #f0f0f0; line-height: 1.4; scroll-behavior: smooth; }
+        h1, h2, h3 { font-weight: 800; letter-spacing: -0.02em; }
+        h2 { font-size: 2.2rem; margin-bottom: 1rem; border-left: 5px solid #f39c12; padding-left: 20px; }
+        .section { padding: 70px 20px; max-width: 1280px; margin: 0 auto; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .accent { color: #f39c12; }
+        .btn { display: inline-block; background-color: #f39c12; color: #0a0a0a; font-weight: 700; padding: 16px 32px; border-radius: 4px; text-decoration: none; transition: all 0.3s ease; font-size: 1.1rem; text-align: center; border: none; cursor: pointer; font-family: inherit; }
+        .btn:hover { background-color: #e67e22; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(243,156,18,0.3); }
+        .btn-outline { background: transparent; border: 2px solid #f39c12; color: #f39c12; }
+        .btn-outline:hover { background: #f39c12; color: #0a0a0a; }
+        .hero { min-height: 100vh; background: linear-gradient(135deg, rgba(0,0,0,0.85), rgba(0,0,0,0.7)), url('images/hero-bg.jpg') center/cover no-repeat; display: flex; align-items: center; position: relative; }
+        .hero-content { max-width: 700px; padding: 20px; }
+        .hero h1 { font-size: 3.2rem; line-height: 1.2; margin-bottom: 1rem; }
+        .hero-bullets { margin: 25px 0; list-style: none; }
+        .hero-bullets li { margin-bottom: 12px; font-size: 1.2rem; display: flex; align-items: center; gap: 12px; }
+        .hero-bullets i { color: #f39c12; width: 24px; }
+        .stats-grid { display: flex; flex-wrap: wrap; gap: 30px; justify-content: space-between; margin: 40px 0; }
+        .stat-item { flex: 1; background: rgba(255,255,255,0.05); padding: 20px; border-radius: 12px; text-align: center; backdrop-filter: blur(4px); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: #f39c12; }
+        .problem-solution { background: #111; }
+        .two-columns { display: flex; flex-wrap: wrap; gap: 40px; margin-top: 40px; }
+        .col { flex: 1; background: #1a1a1a; padding: 30px; border-radius: 20px; }
+        .col h3 { font-size: 1.8rem; margin-bottom: 20px; }
+        .col ul { list-style: none; }
+        .col li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; }
+        .col i.fa-times { color: #e74c3c; }
+        .col i.fa-check { color: #2ecc71; }
+        .economy-numbers { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin: 50px 0; }
+        .econ-card { background: #1a1a1a; border-radius: 20px; padding: 30px; text-align: center; flex: 1; min-width: 200px; transition: transform 0.2s; }
+        .econ-card:hover { transform: translateY(-8px); }
+        .big-number { font-size: 3.8rem; font-weight: 800; color: #f39c12; }
+        .cost { font-size: 2rem; font-weight: 800; margin: 20px 0; }
+        .steps { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 40px; }
+        .step { flex: 1; background: #111; padding: 30px 20px; border-radius: 20px; text-align: center; }
+        .step-number { width: 50px; height: 50px; background: #f39c12; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; font-weight: 800; margin: 0 auto 20px; }
+        .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; margin-top: 30px; }
+        .spec-item { background: #111; padding: 20px; border-radius: 12px; border-left: 4px solid #f39c12; }
+        .price-block { background: linear-gradient(135deg, #1f1f1f, #0f0f0f); padding: 30px; border-radius: 24px; text-align: center; }
+        .price-row { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 20px 0; }
+        .price-item { font-size: 1.5rem; }
+        .case { background: #111; border-radius: 24px; padding: 30px; }
+        .form-card { background: #111; padding: 40px; border-radius: 24px; text-align: center; }
+        .form-group { margin-bottom: 20px; }
+        input, select { width: 100%; padding: 16px; background: #222; border: 1px solid #333; color: white; border-radius: 8px; font-size: 1rem; }
+        .sticky-cta { position: fixed; bottom: 20px; right: 20px; z-index: 1000; display: flex; gap: 12px; }
+        .sticky-cta .btn { padding: 12px 24px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } h2 { font-size: 1.8rem; } .section { padding: 50px 16px; } .sticky-cta .btn { padding: 10px 18px; font-size: 0.9rem; } .stats-grid { flex-direction: column; } .big-number { font-size: 2.5rem; } }
+        footer { background: #050505; padding: 30px 20px; text-align: center; border-top: 1px solid #222; }
+        .contact-links { display: flex; justify-content: center; gap: 30px; margin: 20px 0; flex-wrap: wrap; }
+        .contact-links a { color: #f39c12; font-size: 1.5rem; text-decoration: none; }
+        .contact-links a i { margin-right: 8px; }
+        .calculator { background: #111; border-radius: 24px; padding: 30px; margin-top: 30px; }
+        .calc-row { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; margin-bottom: 30px; }
+        .calc-field { flex: 1; }
+        .calc-field label { display: block; margin-bottom: 8px; font-weight: 600; }
+        .calc-result { background: #1f1f1f; padding: 20px; border-radius: 16px; text-align: center; font-size: 1.4rem; }
+        .calc-result span { font-size: 2rem; font-weight: 800; color: #f39c12; }
+        .before-after { display: flex; flex-wrap: wrap; gap: 30px; margin-top: 30px; }
+        .ba-item { flex: 1; text-align: center; }
+        .ba-item img { width: 100%; border-radius: 16px; border: 1px solid #333; }
+        .ba-caption { margin-top: 12px; font-weight: 700; }
+        .whatsapp-btn { background: #25D366; color: white; }
+        .whatsapp-btn:hover { background: #128C7E; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; margin-top: 30px; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+        .swiper { width: 100%; border-radius: 20px; margin-top: 30px; }
+        .swiper-slide img { width: 100%; border-radius: 20px; border: 1px solid #333; display: block; }
+        .swiper-button-next, .swiper-button-prev { color: #f39c12; }
+        .swiper-pagination-bullet { background: #fff; opacity: 0.5; }
+        .swiper-pagination-bullet-active { background: #f39c12; }
+        .footer-privacy { margin-top: 15px; font-size: 0.8rem; }
+        .footer-privacy a { color: #f39c12; text-decoration: none; }
+        .footer-privacy a:hover { text-decoration: underline; }
     </style>
 </head>
 <body>
@@ -401,28 +110,8 @@
     <div class="container">
         <h2>❌ Было — убивали прибыль</h2>
         <div class="two-columns">
-            <div class="col">
-                <h3>БЫЛО</h3>
-                <ul>
-                    <li><i class="fas fa-times"></i> Низкая производительность (до 30 м³)</li>
-                    <li><i class="fas fa-times"></i> 3–4 человека в бригаде</li>
-                    <li><i class="fas fa-times"></i> Постоянные простои</li>
-                    <li><i class="fas fa-times"></i> Перерасход ГСМ</li>
-                    <li><i class="fas fa-times"></i> Зависимость от лесовоза</li>
-                    <li><i class="fas fa-times"></i> Ручной труд</li>
-                </ul>
-            </div>
-            <div class="col">
-                <h3>СТАЛО с RUTT</h3>
-                <ul>
-                    <li><i class="fas fa-check"></i> Производительность до 90 м³/смена</li>
-                    <li><i class="fas fa-check"></i> 2 человека в бригаде</li>
-                    <li><i class="fas fa-check"></i> Минимум простоев</li>
-                    <li><i class="fas fa-check"></i> Экономия ГСМ до 30%</li>
-                    <li><i class="fas fa-check"></i> Свой лесовозный модуль</li>
-                    <li><i class="fas fa-check"></i> Механизация 100%</li>
-                </ul>
-            </div>
+            <div class="col"><h3>БЫЛО</h3><ul><li><i class="fas fa-times"></i> Низкая производительность (до 30 м³)</li><li><i class="fas fa-times"></i> 3–4 человека в бригаде</li><li><i class="fas fa-times"></i> Постоянные простои</li><li><i class="fas fa-times"></i> Перерасход ГСМ</li><li><i class="fas fa-times"></i> Зависимость от лесовоза</li><li><i class="fas fa-times"></i> Ручной труд</li></ul></div>
+            <div class="col"><h3>СТАЛО с RUTT</h3><ul><li><i class="fas fa-check"></i> Производительность до 90 м³/смена</li><li><i class="fas fa-check"></i> 2 человека в бригаде</li><li><i class="fas fa-check"></i> Минимум простоев</li><li><i class="fas fa-check"></i> Экономия ГСМ до 30%</li><li><i class="fas fa-check"></i> Свой лесовозный модуль</li><li><i class="fas fa-check"></i> Механизация 100%</li></ul></div>
         </div>
     </div>
 </section>
@@ -431,17 +120,8 @@
     <div class="container">
         <h2>🚜 RUTT — тракторный полуприцеп с манипулятором</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px;">
-            <div style="flex:1">
-                <p style="font-size: 1.2rem; margin-bottom: 20px;">Работает в связке с МТЗ. Управление из кабины. Замена трелевки и форвардера. Вывоз сразу на нижний склад.</p>
-                <ul>
-                    <li><i class="fas fa-check-circle accent"></i> Не требует дополнительной техники</li>
-                    <li><i class="fas fa-check-circle accent"></i> Окупаемость за 1 сезон</li>
-                    <li><i class="fas fa-check-circle accent"></i> Простота обслуживания</li>
-                </ul>
-            </div>
-            <div style="flex:1">
-                <img loading="lazy" src="images/rutt-photo.jpg" alt="Лесовозный полуприцеп RUTT" style="width:100%; border-radius: 20px; border: 1px solid #333;">
-            </div>
+            <div style="flex:1"><p style="font-size: 1.2rem; margin-bottom: 20px;">Работает в связке с МТЗ. Управление из кабины. Замена трелевки и форвардера. Вывоз сразу на нижний склад.</p><ul><li><i class="fas fa-check-circle accent"></i> Не требует дополнительной техники</li><li><i class="fas fa-check-circle accent"></i> Окупаемость за 1 сезон</li><li><i class="fas fa-check-circle accent"></i> Простота обслуживания</li></ul></div>
+            <div style="flex:1"><img loading="lazy" src="images/rutt-photo.jpg" alt="Лесовозный полуприцеп RUTT" style="width:100%; border-radius: 20px; border: 1px solid #333;"></div>
         </div>
     </div>
 </section>
@@ -449,16 +129,9 @@
 <section class="section" style="background: #0c0c0c;">
     <div class="container">
         <h2>💰 Экономика: рост прибыли и снижение затрат</h2>
-        <div class="economy-numbers">
-            <div class="econ-card"><div class="big-number">+40%</div><div>прибыль</div></div>
-            <div class="econ-card"><div class="big-number">-33%</div><div>расходы</div></div>
-            <div class="econ-card"><div class="big-number">x2.5</div><div>меньше персонала</div></div>
-            <div class="econ-card"><div class="big-number">+100%</div><div>зарплата водителя</div></div>
-        </div>
+        <div class="economy-numbers"><div class="econ-card"><div class="big-number">+40%</div><div>прибыль</div></div><div class="econ-card"><div class="big-number">-33%</div><div>расходы</div></div><div class="econ-card"><div class="big-number">x2.5</div><div>меньше персонала</div></div><div class="econ-card"><div class="big-number">+100%</div><div>зарплата водителя</div></div></div>
         <div class="cost" style="text-align: center;">Себестоимость заготовки: <span class="accent">до 800 руб/м³</span></div>
-        <div style="text-align: center; margin-top: 20px;">
-            <a href="#form" class="btn">Рассчитать экономию под ваш объем</a>
-        </div>
+        <div style="text-align: center; margin-top: 20px;"><a href="#form" class="btn">Рассчитать экономию под ваш объем</a></div>
     </div>
 </section>
 
@@ -466,20 +139,8 @@
     <div class="container calculator">
         <h2>🧮 Калькулятор окупаемости RUTT</h2>
         <p style="margin-bottom: 20px;">Введите ваши параметры и узнайте, через сколько месяцев полуприцеп окупится за счёт экономии</p>
-        <div class="calc-row">
-            <div class="calc-field">
-                <label>Стоимость полуприцепа RUTT (₽)</label>
-                <input type="number" id="priceRutt" value="3600000" step="100000">
-            </div>
-            <div class="calc-field">
-                <label>Ваш текущий объём заготовки (м³/мес)</label>
-                <input type="number" id="volume" value="800" step="50">
-            </div>
-        </div>
-        <div class="calc-result" id="calcResult">
-            ⚙️ Расчёт: экономия от снижения себестоимости <strong id="savingsPerMonth">0</strong> ₽/мес<br>
-            Срок окупаемости: <span id="paybackMonths">0</span> месяцев
-        </div>
+        <div class="calc-row"><div class="calc-field"><label>Стоимость полуприцепа RUTT (₽)</label><input type="number" id="priceRutt" value="3600000" step="100000"></div><div class="calc-field"><label>Ваш текущий объём заготовки (м³/мес)</label><input type="number" id="volume" value="800" step="50"></div></div>
+        <div class="calc-result" id="calcResult">⚙️ Расчёт: экономия от снижения себестоимости <strong id="savingsPerMonth">0</strong> ₽/мес<br>Срок окупаемости: <span id="paybackMonths">0</span> месяцев</div>
         <p style="font-size:0.85rem; margin-top:15px;">*Расчёт основан на снижении себестоимости с 1200 ₽/м³ до 800 ₽/м³, экономии на персонале и ГСМ. Данные приблизительные, точный расчёт предоставим после консультации.</p>
     </div>
 </section>
@@ -487,11 +148,7 @@
 <section class="section">
     <div class="container">
         <h2>⚙️ Как это работает</h2>
-        <div class="steps">
-            <div class="step"><div class="step-number">1</div><h3>Один вальщик</h3><p>Валка леса и подготовка</p></div>
-            <div class="step"><div class="step-number">2</div><h3>Один тракторист</h3><p>Управление RUTT из кабины МТЗ</p></div>
-            <div class="step"><div class="step-number">3</div><h3>Одна техника</h3><p>Погрузка, трелевка, вывоз</p></div>
-        </div>
+        <div class="steps"><div class="step"><div class="step-number">1</div><h3>Один вальщик</h3><p>Валка леса и подготовка</p></div><div class="step"><div class="step-number">2</div><h3>Один тракторист</h3><p>Управление RUTT из кабины МТЗ</p></div><div class="step"><div class="step-number">3</div><h3>Одна техника</h3><p>Погрузка, трелевка, вывоз</p></div></div>
         <div style="text-align: center; margin-top: 20px; font-size: 1.4rem; font-weight: 700;">Производительность: <span class="accent">до 3000 м³ в месяц</span></div>
     </div>
 </section>
@@ -499,53 +156,28 @@
 <section class="section" style="background: #111;">
     <div class="container">
         <h2>📸 Фото ДО и ПОСЛЕ внедрения RUTT</h2>
-        <div class="before-after">
-            <div class="ba-item">
-                <img loading="lazy" src="images/before.jpg" alt="До: ручная погрузка, простои">
-                <div class="ba-caption">❌ ДО: ручной труд, низкая производительность</div>
-            </div>
-            <div class="ba-item">
-                <img loading="lazy" src="images/after.jpg" alt="После: механизированная погрузка RUTT">
-                <div class="ba-caption">✅ ПОСЛЕ: быстрая погрузка, меньше людей, больше прибыли</div>
-            </div>
-        </div>
+        <div class="before-after"><div class="ba-item"><img loading="lazy" src="images/before.jpg" alt="До: ручная погрузка, простои"><div class="ba-caption">❌ ДО: ручной труд, низкая производительность</div></div><div class="ba-item"><img loading="lazy" src="images/after.jpg" alt="После: механизированная погрузка RUTT"><div class="ba-caption">✅ ПОСЛЕ: быстрая погрузка, меньше людей, больше прибыли</div></div></div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
         <h2>📐 Технические характеристики</h2>
-        <div class="specs">
-            <div class="spec-item"><strong>Грузоподъемность:</strong> 14 000 кг</div>
-            <div class="spec-item"><strong>Вылет стрелы:</strong> 7.5 м</div>
-            <div class="spec-item"><strong>Длина:</strong> 4–6 м</div>
-            <div class="spec-item"><strong>Оси ADR:</strong> усиленные</div>
-            <div class="spec-item"><strong>Балансирная тележка:</strong> надежность</div>
-            <div class="spec-item"><strong>Управление:</strong> гидроманипулятор из кабины</div>
-        </div>
+        <div class="specs"><div class="spec-item"><strong>Грузоподъемность:</strong> 14 000 кг</div><div class="spec-item"><strong>Вылет стрелы:</strong> 7.5 м</div><div class="spec-item"><strong>Длина:</strong> 4–6 м</div><div class="spec-item"><strong>Оси ADR:</strong> усиленные</div><div class="spec-item"><strong>Балансирная тележка:</strong> надежность</div><div class="spec-item"><strong>Управление:</strong> гидроманипулятор из кабины</div></div>
     </div>
 </section>
 
 <section class="section">
     <div class="container">
         <h2>👥 Кому подходит RUTT</h2>
-        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;">
-            <span style="background:#222; padding:10px 20px; border-radius:40px;">Малые и средние заготовители</span>
-            <span style="background:#222; padding:10px 20px; border-radius:40px;">Арендаторы лесных участков</span>
-            <span style="background:#222; padding:10px 20px; border-radius:40px;">У кого мало людей</span>
-            <span style="background:#222; padding:10px 20px; border-radius:40px;">Кто работает на МТЗ</span>
-            <span style="background:#222; padding:10px 20px; border-radius:40px;">Кто хочет снизить себестоимость</span>
-        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px;"><span style="background:#222; padding:10px 20px; border-radius:40px;">Малые и средние заготовители</span><span style="background:#222; padding:10px 20px; border-radius:40px;">Арендаторы лесных участков</span><span style="background:#222; padding:10px 20px; border-radius:40px;">У кого мало людей</span><span style="background:#222; padding:10px 20px; border-radius:40px;">Кто работает на МТЗ</span><span style="background:#222; padding:10px 20px; border-radius:40px;">Кто хочет снизить себестоимость</span></div>
     </div>
 </section>
 
 <section class="section" style="background: #0f0f0f;">
     <div class="container price-block">
         <h2>💰 Инвестиции в рост прибыли</h2>
-        <div class="price-row">
-            <div class="price-item">МТЗ 1221 — <strong>4 650 000 ₽</strong></div>
-            <div class="price-item">RUTT — <strong class="accent">3 600 000 ₽</strong></div>
-        </div>
+        <div class="price-row"><div class="price-item">МТЗ 1221 — <strong>4 650 000 ₽</strong></div><div class="price-item">RUTT — <strong class="accent">3 600 000 ₽</strong></div></div>
         <p style="font-size: 1.2rem;">👉 Дешевле форвардера, быстрее окупается. Окупаемость <strong>6–12 месяцев</strong></p>
         <a href="#form" class="btn" style="margin-top: 20px;">Узнать стоимость с доставкой</a>
     </div>
@@ -555,16 +187,34 @@
     <div class="container case">
         <h2>📌 Реальный кейс</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
-            <div style="flex:1">
-                <h3>ООО “Челябинский областной лесхоз”</h3>
-                <p><strong>Площадь:</strong> 37 000 га<br>
-                <strong>Результат:</strong> увеличение производительности в 2.5 раза, снижение затрат на логистику на 30%.<br>
-                Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p>
-            </div>
-            <div style="flex:1">
-                <img loading="lazy" src="images/case.jpg" alt="Лесозаготовка RUTT" style="width:100%; border-radius: 20px;">
-            </div>
+            <div style="flex:1"><h3>ООО “Челябинский областной лесхоз”</h3><p><strong>Площадь:</strong> 37 000 га<br><strong>Результат:</strong> увеличение производительности в 2.5 раза, снижение затрат на логистику на 30%.<br>Техника RUTT показала надежность в суровых условиях Урала. Эксплуатируется круглогодично.</p><a href="files/case.pdf" class="btn" style="margin-top: 20px; display: inline-block;" target="_blank"><i class="fas fa-file-pdf"></i> Открыть подробный кейс (PDF)</a></div>
+            <div style="flex:1"><img loading="lazy" src="images/case.jpg" alt="Лесозаготовка RUTT" style="width:100%; border-radius: 20px;"></div>
         </div>
+    </div>
+</section>
+
+<!-- Фотокарусель (Swiper) с 10 фото -->
+<section class="section" style="background: #111;">
+    <div class="container">
+        <h2>📸 Фотогалерея RUTT в работе</h2>
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/1.jpg" alt="Работа RUTT 1"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/2.jpg" alt="Работа RUTT 2"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/3.jpg" alt="Работа RUTT 3"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/4.jpg" alt="Работа RUTT 4"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/5.jpg" alt="Работа RUTT 5"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/6.jpg" alt="Работа RUTT 6"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/7.jpg" alt="Работа RUTT 7"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/8.jpg" alt="Работа RUTT 8"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/9.jpg" alt="Работа RUTT 9"></div>
+                <div class="swiper-slide"><img loading="lazy" src="images/gallery/10.jpg" alt="Работа RUTT 10"></div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <p style="text-align:center; margin-top: 20px; font-size:0.9rem;">Листайте фото — реальные кадры с лесосек</p>
     </div>
 </section>
 
@@ -580,41 +230,29 @@
     </div>
 </section>
 
+<!-- Видео Rutube -->
 <section class="section">
     <div class="container">
         <h2>📹 Видео работы техники</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; background: #000;">
-            <a href="https://www.youtube.com/watch?v=WXpbyExaEuE" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: url('https://img.youtube.com/vi/WXpbyExaEuE/maxresdefault.jpg') center/cover no-repeat; text-decoration: none;">
-                <div style="background: rgba(0,0,0,0.6); width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas fa-play" style="font-size: 40px; color: #f39c12;"></i>
-                </div>
-            </a>
+        <div class="video-container">
+            <iframe src="https://rutube.ru/play/embed/90363830324d41d28bf3bcca2eb7d546/?p=R1Gg6wUzL_pl2bkJ9DLFkw" frameborder="0" allow="clipboard-write; autoplay" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
-        <p style="text-align:center; margin-top: 12px;">Нажмите на изображение, чтобы посмотреть видео на YouTube</p>
+        <p style="text-align:center; margin-top: 12px;">Обзор возможностей RUTT на реальной лесосеке</p>
     </div>
 </section>
+
 <section id="form" class="section">
     <div class="container form-card">
         <h2>Получите расчет и консультацию</h2>
         <p style="margin-bottom: 30px;">Оставьте заявку, и мы подберем оптимальную комплектацию под ваш участок</p>
-        <form action="https://formsubmit.co/ваш-email@example.com" method="POST" style="max-width: 500px; margin: 0 auto;">
-            <input type="hidden" name="_subject" value="Новая заявка с лендинга RUTT">
-            <input type="hidden" name="_captcha" value="false">
-            <div class="form-group">
-                <input type="text" name="Имя" placeholder="Ваше имя" required>
-            </div>
-            <div class="form-group">
-                <input type="tel" name="Телефон" placeholder="Телефон" required>
-            </div>
-            <div class="form-group">
-                <input type="text" name="Объем заготовки (м³/мес)" placeholder="Примерный объем заготовки (опционально)">
-            </div>
+        <form action="https://api.formbee.dev/formbee/8ce511ff-7171-4ec5-a85a-3dfc5b5e87e2" method="POST" style="max-width: 500px; margin: 0 auto;">
+            <div class="form-group"><input type="text" name="Имя" placeholder="Ваше имя" required></div>
+            <div class="form-group"><input type="tel" name="Телефон" placeholder="Телефон" required></div>
+            <div class="form-group"><input type="text" name="Объем заготовки (м³/мес)" placeholder="Примерный объем заготовки (опционально)"></div>
             <button type="submit" class="btn" style="width:100%;">👉 Получить расчет и консультацию</button>
         </form>
-        <div style="margin-top: 30px;">
-            <a href="https://wa.me/79227275847?text=Здравствуйте! Хочу получить коммерческое предложение на лесовозный полуприцеп RUTT" target="_blank" class="btn whatsapp-btn" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Получить КП в WhatsApp</a>
-        </div>
-        <p style="margin-top: 20px; font-size: 0.8rem;">Нажимая кнопку, вы соглашаетесь с обработкой данных</p>
+        <div style="margin-top: 30px;"><a href="https://wa.me/79227275847?text=Здравствуйте! Хочу получить коммерческое предложение на лесовозный полуприцеп RUTT" target="_blank" class="btn whatsapp-btn" style="background:#25D366;"><i class="fab fa-whatsapp"></i> Получить КП в WhatsApp</a></div>
+        <p style="margin-top: 20px; font-size: 0.8rem;">Нажимая кнопку, вы соглашаетесь с <a href="privacy.html" target="_blank" style="color:#f39c12;">политикой конфиденциальности</a></p>
     </div>
 </section>
 
@@ -622,56 +260,30 @@
     <div class="container">
         <h3 style="margin-bottom: 15px;">Свяжитесь с нами</h3>
         <div class="contact-links">
-            <a href="tel:+79227275847"><i class="fas fa-phone-alt"></i> +7 (909) 146-76-87</a>
+            <a href="tel:+79227275847"><i class="fas fa-phone-alt"></i> +7 (922) 727-58-47</a>
             <a href="https://wa.me/79227275847" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
             <a href="https://t.me/roma_l_88" target="_blank"><i class="fab fa-telegram"></i> Telegram</a>
+            <a href="mailto:poslankorg@gmail.com"><i class="fas fa-envelope"></i> poslankorg@gmail.com</a>
+        </div>
+        <div class="footer-privacy">
+            <a href="privacy.html" target="_blank">Политика конфиденциальности</a>
         </div>
         <p style="margin-top: 20px;">© 2026 RUTT — Техника для лесозаготовки. Все права защищены.</p>
     </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-    // Калькулятор окупаемости
+    const swiper = new Swiper('.swiper', { loop: true, navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' }, pagination: { el: '.swiper-pagination', clickable: true }, spaceBetween: 20, slidesPerView: 1, breakpoints: { 768: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } } });
     const priceInput = document.getElementById('priceRutt');
     const volumeInput = document.getElementById('volume');
     const savingsSpan = document.getElementById('savingsPerMonth');
     const paybackSpan = document.getElementById('paybackMonths');
-
-    function calculatePayback() {
-        let price = parseFloat(priceInput.value) || 3600000;
-        let volume = parseFloat(volumeInput.value) || 0;
-        // Экономия на 1 м³: 1200 - 800 = 400 руб/м³, плюс экономия на персонале и ГСМ ~200 руб/м³, итого 600 руб/м³
-        let savingPerCube = 600;
-        let monthlySavings = volume * savingPerCube;
-        if (monthlySavings <= 0) monthlySavings = 0;
-        let months = monthlySavings > 0 ? (price / monthlySavings).toFixed(1) : '∞';
-        savingsSpan.innerText = Math.round(monthlySavings).toLocaleString('ru-RU');
-        paybackSpan.innerText = months === '∞' ? '—' : months;
-    }
-
+    function calculatePayback() { let price = parseFloat(priceInput.value) || 3600000; let volume = parseFloat(volumeInput.value) || 0; let savingPerCube = 600; let monthlySavings = volume * savingPerCube; if (monthlySavings <= 0) monthlySavings = 0; let months = monthlySavings > 0 ? (price / monthlySavings).toFixed(1) : '∞'; savingsSpan.innerText = Math.round(monthlySavings).toLocaleString('ru-RU'); paybackSpan.innerText = months === '∞' ? '—' : months; }
     priceInput.addEventListener('input', calculatePayback);
     volumeInput.addEventListener('input', calculatePayback);
     calculatePayback();
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href').substring(1);
-            if(targetId === '') return;
-            const targetElement = document.getElementById(targetId);
-            if(targetElement) {
-                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
-        });
-    });
-
-    const form = document.querySelector('form');
-    if(form && form.action.includes('Admin@drova-74.ru')) {
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('⚠️ Для получения заявок укажите свой email в атрибуте action формы. Сейчас используется тестовый адрес.');
-        });
-    }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const targetId = this.getAttribute('href').substring(1); if(targetId === '') return; const targetElement = document.getElementById(targetId); if(targetElement) { targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); } }); });
 </script>
 </body>
 </html>
