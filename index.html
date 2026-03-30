@@ -104,7 +104,6 @@
         .footer-privacy { margin-top: 15px; font-size: 0.8rem; }
         .footer-privacy a { color: #f39c12; text-decoration: none; }
         .footer-privacy a:hover { text-decoration: underline; }
-        /* Lightbox */
         .lightbox {
             display: none;
             position: fixed;
@@ -138,27 +137,20 @@
         .lightbox-close:hover {
             color: #f39c12;
         }
-        /* Горизонтальный список для "Кому подходит" */
+        /* Обновлённые стили для блока "Кому подходит" */
         .tags-list {
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             margin-top: 30px;
-            overflow-x: auto;
-            padding-bottom: 10px;
         }
         .tags-list span {
             background: #222;
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 40px;
+            font-size: 0.9rem;
             white-space: nowrap;
-        }
-        @media (max-width: 768px) {
-            .tags-list {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
         }
     </style>
 </head>
@@ -231,15 +223,15 @@
 
 <section class="section" style="background: #111;">
     <div class="container">
-        <h2>Внедрения RUTT</h2>
+        <h2>📸 Фото ДО и ПОСЛЕ внедрения RUTT</h2>
         <div class="before-after">
             <div class="ba-item">
                 <img loading="lazy" src="images/before.jpg" alt="До: ручная погрузка, простои">
-                <div class="ba-caption">ДО</div>
+                <div class="ba-caption">До</div>
             </div>
             <div class="ba-item">
                 <img loading="lazy" src="images/after.jpg" alt="После: механизированная погрузка RUTT">
-                <div class="ba-caption">ПОСЛЕ</div>
+                <div class="ba-caption">После</div>
             </div>
         </div>
     </div>
